@@ -15,13 +15,16 @@
            VerticalOptions="Start" />
 
         <Entry
+            x:Name="txtMeetingId"
             Placeholder="Meeting Id"/>
 
         <Entry
+            x:Name="txtPssword"
             Placeholder="Password"/>
 
         <Entry
-            Placeholder="User Name"/>
+            x:Name="txtDisplayName"
+            Placeholder="Display Name"/>
 
         <StackLayout
             Orientation="Horizontal">
@@ -30,7 +33,14 @@
             IsChecked="False"/>
         </StackLayout>
 
-        <Button Text="Start Meeting"/>
+        <Button 
+            x:Name="btnStart"
+            Text="Start Meeting"
+            Clicked="btnStart_Clicked"/>
+        <Button 
+            x:Name="btnEnd"
+            Text="End Meeting" 
+            Clicked="btnEnd_Clicked"/>
     </StackLayout>
 
 </ContentPage>
