@@ -6,11 +6,31 @@
              mc:Ignorable="d"
              x:Class="ZoomApp.MainPage">
 
-    <StackLayout>
+    <StackLayout
+        VerticalOptions="FillAndExpand"
+        Padding="40">
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
+        <Label Text="Zoom Helper App" 
            HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+           VerticalOptions="Start" />
+
+        <Entry
+            Placeholder="Meeting Id"/>
+
+        <Entry
+            Placeholder="Password"/>
+
+        <Entry
+            Placeholder="User Name"/>
+
+        <StackLayout
+            Orientation="Horizontal">
+            <Label Text="Is Host"/>
+            <CheckBox
+            IsChecked="False"/>
+        </StackLayout>
+
+        <Button Text="Start Meeting"/>
     </StackLayout>
 
 </ContentPage>
