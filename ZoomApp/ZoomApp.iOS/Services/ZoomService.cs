@@ -57,12 +57,13 @@ namespace ZoomApp.iOS.Services
             {
                 var meetingService = mobileRTC.GetMeetingService();
                 meetingService.Delegate = new ZoomMeetingEventHandler();
+              
+
                 var meetingParamDict = new Dictionary<string, string>
                 {
                     { Constants.kMeetingParam_Username, displayName },
                     { Constants.kMeetingParam_MeetingNumber, meetingID },
-                    { Constants.kMeetingParam_MeetingPassword, meetingPassword },
-
+                    { Constants.kMeetingParam_MeetingPassword, meetingPassword }
                 };
 
                 var nsMeetingParam = NSDictionary.FromObjectsAndKeys(meetingParamDict.Values.ToArray(), meetingParamDict.Keys.ToArray());
