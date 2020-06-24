@@ -24,13 +24,25 @@ namespace ZoomApp.Droid.Services
         static TaskCompletionSource<object> meetingListSource;
         public void InitZoomLib(string appKey, string appSecret)
         {
-            zoomSDK = ZoomSDK.Instance;
-            var zoomInitParams = new ZoomSDKInitParams
+            try
             {
-                AppKey = appKey,
-                AppSecret = appSecret
-            };
-            zoomSDK.Initialize(Android.App.Application.Context, this, zoomInitParams);
+                zoomSDK = ZoomSDK.Instance;
+
+                var zoomInitParams = new ZoomSDKInitParams
+                {
+                    AppKey = appKey,
+                    AppSecret = appSecret
+                };
+
+                zoomSDK.Initialize(Android.App.Application.Context, this, zoomInitParams);
+
+            }
+            catch (System.Exception ex)
+            {
+
+                throw ex;
+            }
+
         }
 
         public bool IsInitialized()
