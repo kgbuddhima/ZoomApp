@@ -58,15 +58,15 @@ namespace ZoomApp.Droid.Services
 
                 JoinMeetingOptions opts = new JoinMeetingOptions()
                 {
-                    NoInvite = true // prevent inviting others
+                    NoInvite = true, // prevent inviting others
+                    NoDrivingMode = true
                 };
 
                 meetingService.JoinMeetingWithParams(Android.App.Application.Context, new JoinMeetingParams
                 {
                     MeetingNo = meetingID,
                     Password = meetingPassword,
-                    DisplayName = displayName,
-
+                    DisplayName = displayName
                 },
                 opts);
             }

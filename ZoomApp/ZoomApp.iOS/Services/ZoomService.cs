@@ -57,7 +57,13 @@ namespace ZoomApp.iOS.Services
             {
                 var meetingService = mobileRTC.GetMeetingService();
                 meetingService.Delegate = new ZoomMeetingEventHandler();
-              
+
+                // disable invites
+                MobileRTCInviteHelper.SharedInstance.DisableCopyURL = true;
+                MobileRTCInviteHelper.SharedInstance.DisableInviteEmail = true;
+                MobileRTCInviteHelper.SharedInstance.DisableInviteSMS = true;
+
+                mobileRTC.GetMeetingSettings().DisableDriveMode(true); // disable driving mode
 
                 var meetingParamDict = new Dictionary<string, string>
                 {
