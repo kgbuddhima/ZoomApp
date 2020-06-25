@@ -64,6 +64,7 @@ namespace ZoomApp.iOS.Services
                 MobileRTCInviteHelper.SharedInstance.DisableInviteSMS = true;
 
                 mobileRTC.GetMeetingSettings().DisableDriveMode(true); // disable driving mode
+                mobileRTC.GetMeetingSettings().MeetingTitleHidden = true; // hide titlebar for iOS
 
                 var meetingParamDict = new Dictionary<string, string>
                 {
