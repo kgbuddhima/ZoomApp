@@ -59,7 +59,8 @@ namespace ZoomApp.Droid.Services
                 JoinMeetingOptions opts = new JoinMeetingOptions()
                 {
                     NoInvite = true, // prevent inviting others
-                    NoDrivingMode = true
+                    NoDrivingMode = true, // disable driving mode
+                    NoTitlebar = true // hide title bar which shows the meetingid and password
                 };
 
                 meetingService.JoinMeetingWithParams(Android.App.Application.Context, new JoinMeetingParams
