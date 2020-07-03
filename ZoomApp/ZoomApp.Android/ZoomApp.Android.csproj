@@ -53,15 +53,15 @@
     <BundleAssemblies>false</BundleAssemblies>
     <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
     <MandroidI18n />
-    <AndroidDexTool>d8</AndroidDexTool>
-    <JavaMaximumHeapSize>1024</JavaMaximumHeapSize>
+    <AndroidDexTool>dx</AndroidDexTool>
+    <JavaMaximumHeapSize>2048</JavaMaximumHeapSize>
     <AndroidUseAapt2>true</AndroidUseAapt2>
     <AndroidLinkSkip>
     </AndroidLinkSkip>
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+    <AndroidEnableMultiDex>true</AndroidEnableMultiDex>
     <AndroidPackageFormat>apk</AndroidPackageFormat>
     <AndroidLinkTool>r8</AndroidLinkTool>
-    <AndroidEnableMultiDex>true</AndroidEnableMultiDex>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
@@ -105,6 +105,7 @@
     <Compile Include="Services\ZoomService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProguardConfiguration Include="proguard.cfg" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
